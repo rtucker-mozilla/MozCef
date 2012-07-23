@@ -56,8 +56,9 @@ class MozCef(object):
             for key, value in row.items():
                 label_string = "%s%s=%s " % (
                     label_string, str(key), str(value))
-        cefmsg = 'CEF:0|Mozilla|%s|1.0|%s|%s|5|%s dhost=%s' % (self.prog_name,
-            message_name, message_description, label_string, os.uname()[1])
+        cefmsg = 'CEF:0|Mozilla|%s|1.0|%s|%s|5|%s dhost=%s' %\
+            (self.prog_name, message_name, message_description,
+                label_string, os.uname()[1])
         try:
             syslog_level = getattr(syslog, type)
         except AttributeError:
